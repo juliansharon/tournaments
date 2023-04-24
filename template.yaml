@@ -349,7 +349,28 @@ Resources:
           Type: Api
           Properties:
             Path: /tournament/exit
-            Method: POST                 
+            Method: POST  
+
+  GetLeaderBoard:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: getLeaderBoard/
+      Handler: app.handler
+      MemorySize: 256
+      Runtime: nodejs16.x
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref TournamentTableName
+          SCORE_TABLE_NAME: !Ref ScoreTableName
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName: !Ref TournamentTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /tournament/leaderBoard
+            Method: Get                         
 Outputs:
   ConnectionsTableArn:
     Description: "Connections table ARN"

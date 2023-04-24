@@ -1,5 +1,5 @@
 {
-  "body": "{\"tournamentId\": \"72807243-17f0-4411-a3d6-e6250f02262f\"}",
+  "body": "{\"tournamentId\": \"1000\"}",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
   "httpMethod": "POST",
