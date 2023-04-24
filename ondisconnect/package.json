@@ -1,0 +1,11 @@
+{
+  "name": "on-disconnect",
+  "version": "1.0.0",
+  "description": "ondisconnect example for WebSockets on API Gateway",
+  "main": "app.js",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.1363.0"
+  }
+}
