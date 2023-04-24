@@ -4,6 +4,7 @@ const ddb = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', region: 
 
 exports.handler = async event => {
     const tournamentId = JSON.parse(event.body).tournamentId;
+    const userId = JSON.parse(event.body).tournamentId;
     console.log(JSON.parse(event.body))
     const getparams = {
         TableName:
@@ -28,7 +29,7 @@ exports.handler = async event => {
             UpdateExpression: "set currentUsers = if_not_exists(currentUsers, :initial) + :num",
             ExpressionAttributeValues: {
                 ":num": 1,
-                ":initial": 0
+                ":initial": []
 
             },
         };
